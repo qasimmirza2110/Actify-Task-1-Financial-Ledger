@@ -1,0 +1,83 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Java ###
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.metadata/
+*.launch
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### OS ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Local secrets and environment (never commit) ###
+.env
+.env.*
+*.env
+!.env.example
+application-local.properties
+application-local.yml
+application-secrets.properties
+application-secrets.yml
+secrets/
+credentials/
+
+### Keys and certificates ###
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+### Postman environments / globals ###
+postman_environment*.json
+postman_globals*.json
+*.postman_environment.json
+*.postman_globals.json
+
+### Logs, dumps and temporary files ###
+logs/
+*.dump
+*.backup
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
