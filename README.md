@@ -282,5 +282,12 @@ clearly test-only values used against the local test database.
 - The interest scheduler has no distributed lock; on several instances the work would be repeated (duplicates are
   still skipped by the unique reference).
 - The admin can trigger interest for any month, including future months.
-- A reversal does not check whether the accounts are BLOCKED.
+- A reversal does not check account status, so it is also applied to BLOCKED or CLOSED accounts.
 - Every transfer locks the shared fee and GST system accounts.
+- Idempotency keys are not implemented. Each deposit, withdrawal or transfer request gets a new `TXN-` reference,
+  so a retried request is processed again.
+- Amounts have no currency field; all accounts use one implicit currency and currency conversion is not supported.
+- Scheduled or future-dated transfers are not implemented; transfers run immediately. The only scheduled job is
+  monthly interest.
+- Accounts have `BLOCKED` and `CLOSED` statuses, and deposits, withdrawals and transfers reject non-`ACTIVE`
+  accounts, but there is no API endpoint to block, close or reactivate an account.
